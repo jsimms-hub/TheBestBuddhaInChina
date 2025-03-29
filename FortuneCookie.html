@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fortune Cookie Generator</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('Restaurant 2.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #fortune-container {
+            text-align: center;
+            margin-top: 1in;
+        }
+
+        #fortune-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: red;
+            font-weight: bold;
+        }
+
+        #fortune-cookie-image {
+            width: 150px;
+            height: auto;
+            cursor: pointer;
+        }
+
+        #fortune-display {
+            margin-top: 20px;
+            font-size: 18px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            min-height: 50px;
+            background-color: white;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="fortune-container">
+        <div id="fortune-text">Click here for fortune</div>
+        <img id="fortune-cookie-image" src="Cookie.png" alt="Fortune Cookie">
+        <div id="fortune-display"></div>
+    </div>
+    <script>
+        const fortunes = [
+    "A pleasant surprise is waiting for you...it's a squirrel wearing a tiny chef's hat, holding a baguette.",
+    "The best is yet to come...especially if you like interpretive dance performed by hamsters dressed as tiny tacos.",
+    "Your hard work will soon pay off...in the form of an unlimited supply of rubber chickens that lay chocolate eggs.",
+    "Good things come to those who wait...and those who can juggle bananas while riding a unicycle, chased by a flock of geese.",
+    "You will find happiness in simple things...like discovering your socks match, even though one is a fish and the other is a pineapple.",
+    "A journey of a thousand miles begins with a single step...and a map drawn by a confused pigeon that only knows how to find cheese.",
+    "Your creativity will lead you to success...especially if you're creating a symphony using only spoons and kazoos, played for an audience of cats.",
+    "Fortune favors the bold...and those who can successfully order a pizza in Klingon, topped with anchovies and gummy worms.",
+    "You have a kind and generous heart...and a remarkable talent for imitating the sound of a dial-up modem, as told by a parrot.",
+    "Learn from the past, live for the present, hope for the future...and always carry a spare pair of googly eyes, just in case you meet a talking sandwich.",
+    "The secret to happiness is helping others...especially if they're trying to escape a room filled with pillows and angry squirrels.",
+    "An unexpected opportunity will present itself...it's a chance to become the world's leading expert in competitive thumb wrestling, against a team of very small crabs.",
+    "Your positive attitude will bring you good fortune...and the ability to communicate with houseplants, especially those that grow tomatoes.",
+    "You are on the right path...even if it's a path made of cheese, guarded by a very sleepy bear.",
+    "A friend in need is a friend indeed...especially if they can help you assemble a bookshelf using only spoons and fish bones.",
+    "Take time to appreciate the beauty around you...like the majestic dance of a tumbleweed, as observed by a group of fashionable snails.",
+    "Your dreams are within reach...especially if your dreams involve synchronized swimming with squirrels, in a giant bowl of soup.",
+    "The smallest act of kindness can make a big difference...like returning a lost sock to a very grateful octopus, who is also holding a hot dog.",
+    "You will receive good news soon...it's a coupon for a free hat made of spaghetti, and a pet rock that can talk about pizza.",
+    "Be yourself; everyone else is already taken...and if you're a potato, embrace your starchiness, especially if you can sing like a dolphin.",
+    "Do not fear failure but rather fear not trying... to teach a cat to bake a cake.",
+    "A smile is your personal welcome mat... for a flock of hungry birds.",
+    "You will be successful in your career... as a professional dog walker for squirrels.",
+    "Your greatest strength is your resilience... in surviving a dinner party with talking vegetables.",
+    "The early bird gets the worm... and the late worm gets eaten by a taco."
+];
+
+        const fortuneCookieImage = document.getElementById("fortune-cookie-image");
+        const fortuneDisplay = document.getElementById("fortune-display");
+
+        if (fortuneCookieImage && fortuneDisplay) {
+            fortuneCookieImage.addEventListener("click", function() {
+                const randomIndex = Math.floor(Math.random() * fortunes.length);
+                fortuneDisplay.textContent = fortunes[randomIndex];
+            });
+        } else {
+            console.error("Error: fortuneCookieImage or fortuneDisplay element not found.");
+        }
+    </script>
+</body>
+</html>
